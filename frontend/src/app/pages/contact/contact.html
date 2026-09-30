@@ -1,0 +1,65 @@
+<section class="registry-banner">
+  <div class="wrap">
+    <p class="stage-kicker">{{ lang.t(profile.constituency) }}</p>
+    <h1>{{ lang.lang() === 'mr' ? 'संपर्क साधा' : 'Get in touch' }}</h1>
+    <p>{{ lang.t(profile.name) }}</p>
+  </div>
+</section>
+
+<section class="wrap section problem-layout">
+  <form class="form-card" (submit)="submit($event)" novalidate>
+    <label for="name">{{ lang.lang() === 'mr' ? 'नाव' : 'Name' }}</label>
+    <input id="name" name="name" required [(ngModel)]="name" [class.invalid]="errors().name" [placeholder]="lang.lang() === 'mr' ? 'उदा. सुनील रामराव पाटील' : 'e.g. Sunil Ramrao Patil'" />
+    @if (errors().name) {
+      <p class="field-error">{{ errors().name }}</p>
+    }
+    <label for="phone">{{ lang.lang() === 'mr' ? 'फोन' : 'Phone' }}</label>
+    <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10" required [(ngModel)]="phone" placeholder="9876543210" [class.invalid]="errors().phone" />
+    @if (errors().phone) {
+      <p class="field-error">{{ errors().phone }}</p>
+    }
+    <div class="contact-pair">
+      <div>
+        <label for="email">{{ lang.lang() === 'mr' ? 'ईमेल' : 'Email' }}</label>
+        <input id="email" name="email" type="email" [(ngModel)]="email" placeholder="you@example.com" [class.invalid]="errors().email" />
+        @if (errors().email) {
+          <p class="field-error">{{ errors().email }}</p>
+        }
+      </div>
+      <div>
+        <label for="area">{{ lang.lang() === 'mr' ? 'गाव / जिल्हा' : 'Village / district' }}</label>
+        <input id="area" name="area" [(ngModel)]="area" [placeholder]="lang.lang() === 'mr' ? 'उदा. फलटण, सातारा' : 'e.g. Phaltan, Satara'" />
+      </div>
+    </div>
+    <label for="message">{{ lang.lang() === 'mr' ? 'विषय' : 'Message' }}</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      [(ngModel)]="message"
+      [class.invalid]="errors().message"
+      [placeholder]="lang.lang() === 'mr' ? 'तुमचा संदेश येथे लिहा…' : 'Write your message here…'"
+    ></textarea>
+    @if (errors().message) {
+      <p class="field-error">{{ errors().message }}</p>
+    }
+    <button class="btn btn-primary" type="submit">{{ lang.lang() === 'mr' ? 'ईमेलने पाठवा' : 'Send by email' }}</button>
+  </form>
+
+  <aside class="problem-side">
+    <div class="problem-side-card">
+      <h3>{{ lang.lang() === 'mr' ? 'थेट संपर्क' : 'Direct contact' }}</h3>
+      <div class="contact-lines">
+        <p class="with-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ lang.t(profile.address) }}</p>
+        <a class="with-icon" [href]="'tel:' + profile.phone"><i class="fa-solid fa-phone" aria-hidden="true"></i>{{ profile.phoneDisplay }}</a>
+        <a class="with-icon" [href]="'mailto:' + profile.email"><i class="fa-solid fa-envelope" aria-hidden="true"></i>{{ profile.email }}</a>
+        <a class="with-icon contact-wa" [href]="profile.whatsapp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+      </div>
+    </div>
+    <div class="problem-side-card problem-side-urgent">
+      <h3>{{ lang.lang() === 'mr' ? 'सोशल मीडियावर जोडा' : 'Follow along' }}</h3>
+      <p>{{ lang.lang() === 'mr' ? 'ताज्या घडामोडींसाठी फेसबुकवर फॉलो करा.' : 'Follow on Facebook for the latest updates.' }}</p>
+      <a class="with-icon" [href]="profile.facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a>
+    </div>
+  </aside>
+</section>

@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/rohit}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:Tushar}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 500MB
+
+server:
+  port: ${PORT:8080}
+
+rohit:
+  admin-username: ${ADMIN_USERNAME:admin}
+  admin-password: ${ADMIN_PASSWORD:RohitAdmin@2026}
+  jwt-secret: ${JWT_SECRET:rohit-dev-jwt-secret-change-before-deploy-32}
+  upload-dir: ${UPLOAD_DIR:uploads}
+  allowed-origins: ${ALLOWED_ORIGINS:http://127.0.0.1:4200,http://localhost:4200}

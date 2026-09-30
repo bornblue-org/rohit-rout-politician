@@ -1,0 +1,60 @@
+<section class="doc-header">
+  <div class="wrap doc-header-inner">
+    <div class="doc-header-copy">
+      <p class="stage-kicker">{{ lang.lang() === 'mr' ? 'भाजप पदवीधर प्रकोष्ठ' : 'BJP Graduate Cell' }}</p>
+      <h1>{{ lang.lang() === 'mr' ? 'संघटनात्मक कार्य व अनुभव' : 'Organisational work and experience' }}</h1>
+      <p>{{ lang.t(intro) }}</p>
+    </div>
+    <dl class="doc-facts">
+      @for (item of stats; track item.value) {
+        <div>
+          <dt>{{ item.value }}</dt>
+          <dd>{{ lang.t(item.label) }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>
+
+<section class="wrap section dossier">
+  <nav class="dossier-nav" [attr.aria-label]="lang.lang() === 'mr' ? 'विभाग' : 'Sections'">
+    @for (point of points; track point.id; let i = $index) {
+      <button type="button" [class.active]="activeId() === point.id" (click)="setActive(point.id)">
+        <span class="dossier-nav-no">{{ (i + 1).toString().padStart(2, '0') }}</span>
+        <span>{{ lang.t(point.title) }}</span>
+      </button>
+    }
+  </nav>
+  <article class="dossier-content">
+    <h2>{{ lang.t(active().title) }}</h2>
+    @if (active().lead) {
+      <p class="dossier-lead">{{ lang.t(active().lead!) }}</p>
+    }
+    <ul>
+      @for (item of active().items; track item.mr) {
+        <li>{{ lang.t(item) }}</li>
+      }
+    </ul>
+  </article>
+</section>
+
+<section class="wrap section">
+  <p class="eyebrow">{{ lang.lang() === 'mr' ? 'निवडणूक कार्य' : 'Election work' }}</p>
+  <h2>{{ lang.lang() === 'mr' ? 'मतदारसंघनिहाय कार्य' : 'Constituency-wise work' }}</h2>
+  <table class="dossier-table">
+    <thead>
+      <tr>
+        <th>{{ lang.lang() === 'mr' ? 'मतदारसंघ' : 'Constituency' }}</th>
+        <th>{{ lang.lang() === 'mr' ? 'तपशील' : 'Details' }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (district of districts; track district.id) {
+        <tr>
+          <td>{{ lang.t(district.name) }}</td>
+          <td>{{ lang.t(district.note) }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>

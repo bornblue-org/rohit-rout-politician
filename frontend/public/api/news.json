@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sample-youtube",
+    "banner": "/media/portrait.jpg",
+    "title": { "mr": "उदाहरण बातमी — यूट्यूब व्हिडिओसह", "en": "Example story — with a YouTube video" },
+    "description": {
+      "mr": "ही एक उदाहरण नोंद आहे, जी दाखवते की यूट्यूब व्हिडिओ लिंक दिल्यास बातमीच्या पानावर व्हिडिओ कसा दिसेल. खरी बातमी अ‍ॅडमिन पॅनलमधून जोडल्यावर ही जागा घेईल.",
+      "en": "This is a placeholder entry showing how a story page looks when a YouTube link is attached. It will be replaced once a real story is added from the admin panel."
+    },
+    "images": [],
+    "date": "2026-09-20",
+    "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  {
+    "id": "sample-facebook",
+    "banner": "/media/portrait.jpg",
+    "title": { "mr": "उदाहरण बातमी — फेसबुक पोस्टसह", "en": "Example story — with a Facebook post" },
+    "description": {
+      "mr": "ही एक उदाहरण नोंद आहे, जी दाखवते की फेसबुक पोस्ट लिंक दिल्यास \"फेसबुकवर पाहा\" बटण कसे दिसेल. खरी बातमी अ‍ॅडमिन पॅनलमधून जोडल्यावर ही जागा घेईल.",
+      "en": "This is a placeholder entry showing the \"View on Facebook\" button that appears when a Facebook post link is attached. It will be replaced once a real story is added from the admin panel."
+    },
+    "images": [],
+    "date": "2026-09-15",
+    "facebookUrl": "https://www.facebook.com/RohitAnilRaut"
+  },
+  {
+    "id": "sample-photos",
+    "banner": "/media/portrait.jpg",
+    "title": { "mr": "उदाहरण बातमी — छायाचित्रांसह", "en": "Example story — with photos" },
+    "description": {
+      "mr": "ही एक उदाहरण नोंद आहे, जी नेहमीच्या छायाचित्र-आधारित बातमीचे स्वरूप दाखवते.",
+      "en": "This is a placeholder entry showing the usual photo-based story layout."
+    },
+    "images": ["/media/portrait.jpg"],
+    "date": "2026-09-10"
+  }
+]

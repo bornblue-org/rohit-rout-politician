@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: rohit
+      POSTGRES_USER: rohit
+      POSTGRES_PASSWORD: rohit
+    ports:
+      - "5432:5432"
+    volumes:
+      - rohit-pg:/var/lib/postgresql/data
+
+volumes:
+  rohit-pg:

@@ -1,0 +1,152 @@
+<section class="stage" style="--photo: url('/media/portrait.jpg')">
+  <div class="wrap stage-inner">
+    <div class="pill">{{ lang.lang() === 'mr' ? 'भाजप पदवीधर प्रकोष्ठ' : 'BJP Graduate Cell' }}</div>
+    <p class="stage-kicker">{{ lang.t(profile.constituency) }}</p>
+    <h2>{{ lang.t(profile.name) }}</h2>
+    <p class="stage-lead">{{ lang.t(lead) }}</p>
+    <div class="actions">
+      <a class="btn btn-primary" routerLink="/voters">{{ lang.lang() === 'mr' ? 'मतदार यादी' : 'Voter list' }}</a>
+      <a class="btn btn-ghost" routerLink="/election">{{ lang.lang() === 'mr' ? 'संघटनात्मक कार्य' : 'Organisational work' }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="fact-strip">
+  <div class="wrap fact-strip-inner">
+    @for (item of stats; track item.value) {
+      <div class="fact">
+        <b>{{ item.value }}</b>
+        <span>{{ lang.t(item.label) }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="voter-lookup">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>{{ lang.lang() === 'mr' ? 'आपल्या जिल्ह्याच्या मतदार यादीत नाव शोधा' : 'Find your name in your district voter list' }}</h2>
+        <p>{{ lang.lang() === 'mr' ? 'पुणे, कोल्हापूर, सांगली, सातारा व सोलापूर जिल्ह्यातील पदवीधर मतदार' : 'Graduate voters in Pune, Kolhapur, Sangli, Satara, and Solapur' }}</p>
+      </div>
+      <a class="more" routerLink="/voters">{{ lang.lang() === 'mr' ? 'यादी शोधा →' : 'Search the list →' }}</a>
+    </div>
+    <div class="voter-tiles">
+      @for (district of voterDistricts; track district.id) {
+        <a class="voter-tile" routerLink="/voters" [queryParams]="{ district: district.id }" [style.background]="district.color">
+          <img [src]="district.icon" alt="" />
+          <span>
+            <b>{{ lang.t(district.name) }}</b>
+            <small>{{ lang.lang() === 'mr' ? 'यादी पहा →' : 'Open list →' }}</small>
+          </span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="intro-band">
+  <div class="wrap intro-grid-single">
+    <h2>{{ lang.t(profile.name) }}</h2>
+    <p>{{ lang.t(lead) }}</p>
+    <p class="intro-slogan">{{ lang.t(profile.slogan) }}</p>
+  </div>
+</section>
+
+<section class="band-cream">
+  <div class="wrap section">
+    <p class="eyebrow">{{ lang.lang() === 'mr' ? 'निवडणूक कार्य' : 'Election work' }}</p>
+    <div class="section-head">
+      <h2>{{ lang.lang() === 'mr' ? 'मतदारसंघनिहाय कार्य' : 'Constituency-wise work' }}</h2>
+      <a class="more" routerLink="/election">{{ lang.lang() === 'mr' ? 'सविस्तर पाहा →' : 'Read more →' }}</a>
+    </div>
+    <ol class="index-list">
+      @for (district of districts; track district.id; let i = $index) {
+        <li>
+          <a routerLink="/election">
+            <span class="index-no">{{ (i + 1).toString().padStart(2, '0') }}</span>
+            <span class="index-body">
+              <strong>{{ lang.t(district.name) }}</strong>
+              <span>{{ lang.t(district.note) }}</span>
+            </span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap section">
+    <p class="eyebrow">{{ lang.lang() === 'mr' ? 'संघटन' : 'Organisation' }}</p>
+    <div class="section-head">
+      <h2>{{ lang.lang() === 'mr' ? 'संघटनात्मक कार्य' : 'Organisational work' }}</h2>
+      <a class="more" routerLink="/election">{{ lang.lang() === 'mr' ? 'सर्व मुद्दे →' : 'All points →' }}</a>
+    </div>
+    <ol class="index-list">
+      @for (point of points; track point.id; let i = $index) {
+        <li>
+          <a [routerLink]="'/election'" [fragment]="point.id">
+            <span class="index-no">{{ (i + 1).toString().padStart(2, '0') }}</span>
+            <span class="index-body">
+              <strong>{{ lang.t(point.title) }}</strong>
+              @if (point.lead) {
+                <span>{{ lang.t(point.lead) }}</span>
+              }
+            </span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="problem-call">
+  <div class="wrap">
+    <div>
+      <p>{{ lang.lang() === 'mr' ? 'पदवीधर व विद्यार्थ्यांसाठी' : 'For graduates and students' }}</p>
+      <h2>{{ lang.lang() === 'mr' ? 'समस्या नोंदणी' : 'Register a problem' }}</h2>
+    </div>
+    <a class="btn btn-primary" routerLink="/problems">{{ lang.lang() === 'mr' ? 'समस्या नोंदवा →' : 'Register a problem →' }}</a>
+  </div>
+</section>
+
+<section class="band-cream">
+  <div class="wrap section">
+    <div class="section-head">
+      <h2>{{ lang.lang() === 'mr' ? 'महत्त्वाच्या बातम्या' : 'News' }}</h2>
+      <a class="more" routerLink="/news">{{ lang.lang() === 'mr' ? 'अधिक पहा →' : 'See more →' }}</a>
+    </div>
+    <div class="sheet-grid three">
+      @for (item of news().items; track item.id) {
+        <app-news-card [item]="item" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap section">
+    <div class="section-head">
+      <h2>{{ lang.lang() === 'mr' ? 'छायाचित्रे' : 'Photos' }}</h2>
+      <a class="more" routerLink="/gallery">{{ lang.lang() === 'mr' ? 'अधिक पहा →' : 'See more →' }}</a>
+    </div>
+    <div class="sheet-grid two">
+      @for (album of albums; track album.id) {
+        <a class="sheet" routerLink="/gallery">
+          <div class="sheet-frame">
+            <img [src]="album.cover" [alt]="lang.t(album.title)" />
+          </div>
+          <div class="sheet-body">
+            <span class="sheet-date">{{ album.images.length }} {{ lang.lang() === 'mr' ? 'फोटो' : 'photos' }}</span>
+            <h3>{{ lang.t(album.title) }}</h3>
+            <p>{{ lang.t(album.summary) }}</p>
+            <em>{{ lang.lang() === 'mr' ? 'अधिक पहा →' : 'See more →' }}</em>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>

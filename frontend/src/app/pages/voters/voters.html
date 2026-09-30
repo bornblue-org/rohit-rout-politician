@@ -1,0 +1,165 @@
+<section class="registry-banner">
+  <div class="wrap">
+    <p class="stage-kicker">{{ lang.lang() === 'mr' ? 'भाजप पदवीधर प्रकोष्ठ' : 'BJP Graduate Cell' }}</p>
+    <h1>{{ lang.lang() === 'mr' ? 'पदवीधर मतदार नोंदणी शोध' : 'Graduate voter registry search' }}</h1>
+    <p>{{ lang.lang() === 'mr' ? 'पुणे, कोल्हापूर, सांगली, सातारा व सोलापूर जिल्ह्यातील पदवीधर मतदार यादीत आपले नाव शोधा.' : 'Find your name in the graduate voter list for Pune, Kolhapur, Sangli, Satara, and Solapur.' }}</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <form class="search-card" (submit)="search($event)">
+    <div class="search-card-field">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <input [value]="query()" (input)="query.set($any($event.target).value)" [placeholder]="lang.lang() === 'mr' ? 'नाव टाका — उदा. सुनील रामराव पाटील' : 'Type a name — e.g. Sunil Ramrao Patil'" />
+    </div>
+    <button class="btn btn-primary" type="submit">{{ lang.lang() === 'mr' ? 'शोधा' : 'Search' }}</button>
+  </form>
+</div>
+
+<section class="wrap section">
+  <div class="district-tiles">
+    <button type="button" class="district-tile" [class.active]="district() === 'all'" (click)="setDistrict('all')">
+      <i class="fa-solid fa-earth-asia" aria-hidden="true"></i>
+      <span>{{ lang.lang() === 'mr' ? 'सर्व जिल्हे' : 'All districts' }}</span>
+    </button>
+    @for (item of districts; track item.id) {
+      <button type="button" class="district-tile" [class.active]="district() === item.id" (click)="setDistrict(item.id)" [style.--tile-color]="item.color">
+        <img [src]="item.icon" alt="" />
+        <span>{{ lang.t(item.name) }}</span>
+      </button>
+    }
+  </div>
+
+  @if (!searched()) {
+    <div class="how-it-works">
+      <div>
+        <span class="how-no">1</span>
+        <h3>{{ lang.lang() === 'mr' ? 'जिल्हा निवडा' : 'Choose your district' }}</h3>
+        <p>{{ lang.lang() === 'mr' ? 'वरील पाच जिल्ह्यांपैकी एक निवडा किंवा सर्व जिल्ह्यांत शोधा.' : 'Pick one of the five districts above, or search across all of them.' }}</p>
+      </div>
+      <div>
+        <span class="how-no">2</span>
+        <h3>{{ lang.lang() === 'mr' ? 'नाव टाका' : 'Type your name' }}</h3>
+        <p>{{ lang.lang() === 'mr' ? 'शोध पेटीत आपले पूर्ण नाव किंवा त्याचा भाग टाका.' : 'Enter your full name or part of it in the search box above.' }}</p>
+      </div>
+      <div>
+        <span class="how-no">3</span>
+        <h3>{{ lang.lang() === 'mr' ? 'ओळखपत्र मिळवा' : 'Get your card' }}</h3>
+        <p>{{ lang.lang() === 'mr' ? 'नोंद सापडल्यावर तपशील पाहा आणि मतदार ओळखपत्र डाउनलोड किंवा शेअर करा.' : 'Once found, view the details and download or share your voter card.' }}</p>
+      </div>
+    </div>
+  }
+
+  @if (searched() && query().trim().length < 2) {
+    <div class="empty">
+      <h3>{{ lang.lang() === 'mr' ? 'किमान दोन अक्षरे टाका' : 'Type at least two letters' }}</h3>
+    </div>
+  } @else if (failed()) {
+    <div class="empty">
+      <h3>{{ lang.lang() === 'mr' ? 'यादी सध्या उघडता आली नाही' : 'The list could not be opened' }}</h3>
+    </div>
+  } @else if (searched() && !loading() && matches().length === 0) {
+    <div class="empty">
+      <h3>{{ lang.lang() === 'mr' ? 'या नावाने नोंद सापडली नाही' : 'No entry for this name' }}</h3>
+    </div>
+  } @else if (searched() && matches().length) {
+    <p class="registry-count">{{ total() }} {{ lang.lang() === 'mr' ? 'नोंदी सापडल्या' : 'entries found' }}</p>
+    <div class="registry-list">
+      @for (row of matches(); track rowKey(row)) {
+        <div class="registry-item" [class.is-open]="isExpanded(row)">
+          <button type="button" class="registry-row" (click)="toggle(row)">
+            <span class="registry-avatar">{{ row.name.charAt(0) }}</span>
+            <span class="registry-name">
+              {{ row.name }}
+              <small>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ districtName(row.district) }}
+                <i class="fa-solid fa-hashtag" aria-hidden="true"></i>{{ lang.lang() === 'mr' ? 'भाग' : 'Part' }} {{ row.part }} · {{ lang.lang() === 'mr' ? 'अ.क्र.' : 'Serial' }} {{ row.serial }}
+              </small>
+            </span>
+            <i class="fa-solid fa-chevron-down registry-chevron" aria-hidden="true"></i>
+          </button>
+
+          @if (isExpanded(row)) {
+            <div class="voter-card-drop">
+              <div class="voter-card-stage">
+                <div class="voter-card" #cardEl>
+                  <div class="voter-card-head">
+                    <img [src]="profile.portrait" alt="" />
+                    <strong>{{ lang.t(profile.name) }}</strong>
+                  </div>
+                  <div class="voter-card-pill">{{ lang.t(profile.constituency) }}</div>
+
+                  <div class="voter-card-body">
+                    <span class="voter-card-label">{{ lang.lang() === 'mr' ? 'पदवीधर' : 'Graduate' }}</span>
+                    <h3>{{ row.name }}</h3>
+                    @if (row.relativeName) {
+                      <p class="voter-card-relative">{{ row.relativeName }}</p>
+                    }
+
+                    <div class="voter-card-stats">
+                      <div>
+                        <span>{{ lang.lang() === 'mr' ? 'जिल्हा' : 'District' }}</span>
+                        <b>{{ districtName(row.district) }}</b>
+                      </div>
+                      <div>
+                        <span>{{ lang.lang() === 'mr' ? 'अ.क्र.' : 'Serial' }}</span>
+                        <b>{{ row.serial }}</b>
+                      </div>
+                      <div>
+                        <span>{{ lang.lang() === 'mr' ? 'भाग' : 'Part' }}</span>
+                        <b>{{ row.part }}</b>
+                      </div>
+                    </div>
+
+                    @if (row.qualification) {
+                      <div class="voter-card-line">
+                        <span><i class="fa-solid fa-graduation-cap"></i>{{ lang.lang() === 'mr' ? 'शैक्षणिक पात्रता' : 'Qualification' }}</span>
+                        <b>{{ row.qualification }}</b>
+                      </div>
+                    }
+                    @if (row.occupation) {
+                      <div class="voter-card-line">
+                        <span><i class="fa-solid fa-briefcase"></i>{{ lang.lang() === 'mr' ? 'व्यवसाय' : 'Occupation' }}</span>
+                        <b>{{ row.occupation }}</b>
+                      </div>
+                    }
+                    @if (row.address) {
+                      <div class="voter-card-line">
+                        <span><i class="fa-solid fa-location-dot"></i>{{ lang.lang() === 'mr' ? 'पत्ता' : 'Address' }}</span>
+                        <b>{{ row.address }}</b>
+                      </div>
+                    }
+                  </div>
+
+                  <div class="voter-card-foot">{{ lang.t(profile.slogan) }}</div>
+                </div>
+
+                <div class="voter-card-actions">
+                  <button class="btn btn-primary" type="button" [disabled]="!!generating()" (click)="downloadCard(row)">
+                    @if (generating() === 'download') {
+                      <i class="fa-solid fa-spinner fa-spin"></i>
+                    } @else {
+                      <i class="fa-solid fa-download"></i>
+                    }
+                    {{ lang.lang() === 'mr' ? 'कार्ड डाउनलोड करा' : 'Download card' }}
+                  </button>
+                  <button class="btn btn-ghost" type="button" [disabled]="!!generating()" (click)="shareCard(row)">
+                    @if (generating() === 'share') {
+                      <i class="fa-solid fa-spinner fa-spin"></i>
+                    } @else {
+                      <i class="fa-solid fa-share-nodes"></i>
+                    }
+                    {{ lang.lang() === 'mr' ? 'शेअर करा' : 'Share card' }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+    @if (total() > matches().length) {
+      <p class="admin-note">{{ lang.lang() === 'mr' ? 'आणखी नोंदी आहेत. पूर्ण नाव टाका.' : 'More entries exist. Type more of the name.' }}</p>
+    }
+  }
+</section>
