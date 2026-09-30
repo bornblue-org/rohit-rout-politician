@@ -5,8 +5,8 @@ export const profile = {
   name: { mr: 'श्री. रोहित अनिल राऊत', en: 'Shri Rohit Anil Raut' } satisfies Text,
   shortName: { mr: 'रोहित राऊत', en: 'Rohit Raut' } satisfies Text,
   constituency: {
-    mr: 'भारतीय जनता पार्टी — पदवीधर प्रकोष्ठ, महाराष्ट्र प्रदेश सरचिटणीस',
-    en: 'Bharatiya Janata Party — Graduate Cell, Maharashtra Pradesh General Secretary',
+    mr: 'पदवीधर प्रकोष्ठ, महाराष्ट्र प्रदेश सरचिटणीस',
+    en: 'Graduate Cell, Maharashtra Pradesh General Secretary',
   } satisfies Text,
   slogan: {
     mr: 'विद्यार्थी, युवक व पदवीधरांचे संघटन  |  महाराष्ट्रव्यापी संपर्क  |  संघटनात्मक अनुभव',
@@ -44,8 +44,8 @@ export const stats: Stat[] = [
 ];
 
 export const heroLead: Text = {
-  mr: 'फलटण, जिल्हा सातारा येथून राष्ट्रीय स्वयंसेवक संघाचे बाल स्वयंसेवक ते अखिल भारतीय विद्यार्थी परिषदेचे नऊ वर्षे पूर्णवेळ कार्यकर्ता, आणि आता भारतीय जनता पार्टीच्या पदवीधर प्रकोष्ठात महाराष्ट्र प्रदेश सरचिटणीस पदाची अपेक्षित जबाबदारी. विद्यार्थी, युवक व पदवीधर क्षेत्रातील संघटन अधिक मजबूत करण्याचा प्रवास.',
-  en: 'From a Rashtriya Swayamsevak Sangh bal swayamsevak in Phaltan, Satara district, to nine years as a full-time Akhil Bharatiya Vidyarthi Parishad karyakarta, and now the expected responsibility of Maharashtra Pradesh General Secretary in the BJP’s Graduate Cell. A journey of strengthening organisation among students, youth, and graduates.',
+  mr: 'फलटण, जिल्हा सातारा येथून राष्ट्रीय स्वयंसेवक संघाचे बाल स्वयंसेवक ते अखिल भारतीय विद्यार्थी परिषदेचे नऊ वर्षे पूर्णवेळ कार्यकर्ता, आणि आता पदवीधर प्रकोष्ठात महाराष्ट्र प्रदेश सरचिटणीस पदाची जबाबदारी. विद्यार्थी, युवक व पदवीधर क्षेत्रातील संघटन अधिक मजबूत करण्याचा प्रवास.',
+  en: 'From a Rashtriya Swayamsevak Sangh bal swayamsevak in Phaltan, Satara district, to nine years as a full-time Akhil Bharatiya Vidyarthi Parishad karyakarta, and now the responsibility of Maharashtra Pradesh General Secretary in the Graduate Cell. A journey of strengthening organisation among students, youth, and graduates.',
 };
 
 export const aboutLead: Text = {
@@ -119,7 +119,91 @@ export const awards: Award[] = [
   { year: '२०१६', title: { mr: 'शिवाजी विद्यापीठ, कोल्हापूर विभागीय राष्ट्रीय सेवा योजना उत्कृष्ट स्वयंसेवक पुरस्कार', en: 'Divisional NSS Best Volunteer Award, Shivaji University, Kolhapur' } },
 ];
 
-export const albums: Album[] = [];
+const galleryFiles = [
+  'WhatsApp Image 2026-09-30 at 11.13.32 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.33 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.33 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.33 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.34 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.34 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.34 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.35 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.35 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.36 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.36 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.36 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.37 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.37 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.37 PM (3).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.37 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.38 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.38 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.38 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.39 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.39 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.39 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.40 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.40 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.40 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.41 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.41 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.41 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.42 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.42 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.42 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.43 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.43 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.43 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.44 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.44 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.44 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.45 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.45 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.45 PM (3).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.45 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.46 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.46 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.46 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.47 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.47 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.47 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.48 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.48 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.48 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.49 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.49 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.49 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.50 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.50 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.50 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.51 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.51 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.51 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.52 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.52 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.52 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.53 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.53 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.53 PM (3).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.53 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.54 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.54 PM (2).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.54 PM.jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.55 PM (1).jpeg',
+  'WhatsApp Image 2026-09-30 at 11.13.55 PM.jpeg',
+];
+
+const galleryImages = galleryFiles.map((file) => encodeURI(`/media/${file}`));
+
+export const albums: Album[] = [
+  {
+    id: 'programmes',
+    title: { mr: 'कार्यक्रम व दौरे', en: 'Programmes & visits' },
+    summary: { mr: 'संघटनात्मक कार्यक्रम, सभा व दौऱ्यांची छायाचित्रे.', en: 'Photos from organisational programmes, meetings, and visits.' },
+    cover: galleryImages[0],
+    images: galleryImages,
+  },
+];
 
 export const galleryNote: Text = {
   mr: 'सभा, आंदोलन आणि संघटनात्मक कार्यक्रमांची छायाचित्रे येथे दिली जातील. सध्या या विभागात छायाचित्रे जोडलेली नाहीत.',

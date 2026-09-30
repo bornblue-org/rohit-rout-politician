@@ -1,8 +1,8 @@
 import { DistrictNote, ManifestoPoint, Text } from './types';
 
 export const manifestoIntro: Text = {
-  mr: 'सन २०१२ पासून सलग चौदा वर्षे विद्यार्थी, युवक व पदवीधर क्षेत्रात संघटनात्मक कार्य. महाविद्यालयीन स्तरापासून प्रदेश स्तरापर्यंतचा अनुभव, नऊ वर्षांचे पूर्णवेळ विद्यार्थी परिषद कार्य, नऊ विद्यापीठांच्या सिनेट निवडणुकांचा अनुभव, पदवीधर मतदार नोंदणी व निवडणूक व्यवस्थापनाचा प्रत्यक्ष अनुभव आणि महाराष्ट्रव्यापी शैक्षणिक संपर्क यांचा उपयोग भारतीय जनता पार्टीचे पदवीधर व युवा क्षेत्रातील संघटन अधिक मजबूत करण्यासाठी करण्याची इच्छा.',
-  en: 'Fourteen consecutive years of organisational work among students, youth, and graduates since 2012. Experience from the college level to the state level, nine years of full-time ABVP work, senate-election experience across nine universities, hands-on experience of graduate voter registration and election management, and a statewide educational network — all put to use in strengthening the BJP’s organisation among graduates and youth.',
+  mr: 'सन २०१२ पासून सलग चौदा वर्षे विद्यार्थी, युवक व पदवीधर क्षेत्रात संघटनात्मक कार्य. महाविद्यालयीन स्तरापासून प्रदेश स्तरापर्यंतचा अनुभव, नऊ वर्षांचे पूर्णवेळ विद्यार्थी परिषद कार्य, नऊ विद्यापीठांच्या सिनेट निवडणुकांचा अनुभव, पदवीधर मतदार नोंदणी व निवडणूक व्यवस्थापनाचा प्रत्यक्ष अनुभव आणि महाराष्ट्रव्यापी शैक्षणिक संपर्क यांचा उपयोग पदवीधर व युवा क्षेत्रातील संघटन अधिक मजबूत करण्यासाठी करण्याची इच्छा.',
+  en: 'Fourteen consecutive years of organisational work among students, youth, and graduates since 2012. Experience from the college level to the state level, nine years of full-time ABVP work, senate-election experience across nine universities, hands-on experience of graduate voter registration and election management, and a statewide educational network — all put to use in strengthening organisation among graduates and youth.',
 };
 
 export const manifestoPoints: ManifestoPoint[] = [
