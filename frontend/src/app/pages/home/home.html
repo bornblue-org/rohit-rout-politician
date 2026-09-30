@@ -1,5 +1,6 @@
-<section class="stage" style="--photo: url('/media/portrait.jpg')">
-  <div class="wrap stage-inner">
+<section class="stage">
+  <div class="wrap stage-grid">
+  <div class="stage-inner">
     <div class="pill">{{ lang.lang() === 'mr' ? 'पदवीधर प्रकोष्ठ' : 'Graduate Cell' }}</div>
     <p class="stage-kicker">{{ lang.t(profile.constituency) }}</p>
     <h2>{{ lang.t(profile.name) }}</h2>
@@ -8,6 +9,10 @@
       <a class="btn btn-primary" routerLink="/voters">{{ lang.lang() === 'mr' ? 'मतदार यादी' : 'Voter list' }}</a>
       <a class="btn btn-ghost" routerLink="/election">{{ lang.lang() === 'mr' ? 'संघटनात्मक कार्य' : 'Organisational work' }}</a>
     </div>
+  </div>
+  <div class="stage-photo">
+    <img [src]="profile.portrait" [alt]="lang.t(profile.name)" />
+  </div>
   </div>
 </section>
 
