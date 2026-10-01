@@ -95,7 +95,7 @@ export const manifestoPoints: ManifestoPoint[] = [
     items: [
       { mr: 'महाराष्ट्रातील सर्व जिल्ह्यांमध्ये थेट संपर्क.', en: 'Direct contact across every district of Maharashtra.' },
       { mr: 'सुमारे २०० सक्रिय कार्यकर्त्यांचे नेटवर्क.', en: 'A network of about 200 active karyakartas.' },
-      { mr: 'सुमारे १५,००० पदवीधर मतदारांचा संपर्क व डेटाबेस.', en: 'Contact and a database of about 15,000 graduate voters.' },
+      { mr: 'सुमारे ४८,९४४ पदवीधर मतदारांचा संपर्क व डेटाबेस.', en: 'Contact and a database of about 48,944 graduate voters.' },
       { mr: 'मुंबई वगळता महाराष्ट्रातील विद्यापीठांमध्ये थेट संपर्क.', en: 'Direct contact with universities across Maharashtra except Mumbai.' },
       { mr: 'पश्चिम महाराष्ट्रातील विविध शैक्षणिक संस्थांमध्ये प्रत्यक्ष प्रवासातून निर्माण झालेला संपर्क.', en: 'Contacts built through personal travel to educational institutions across western Maharashtra.' },
     ],

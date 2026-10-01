@@ -38,9 +38,9 @@ export const nav: NavItem[] = [
 
 export const stats: Stat[] = [
   { value: '१४', label: { mr: 'वर्षे संघटनात्मक कार्य (२०१२ पासून)', en: 'Years of organisational work (since 2012)' } },
-  { value: '९', label: { mr: 'विद्यापीठांच्या सिनेट निवडणुकांचा अनुभव', en: 'Universities’ senate elections handled' } },
+  { value: '९', label: { mr: 'विद्यापीठांच्या सिनेट निवडणुका लढवून जिंकलेल्या आहेत', en: 'Universities’ senate elections contested and won' } },
   { value: '२००', label: { mr: 'सक्रिय कार्यकर्त्यांचे नेटवर्क', en: 'Active karyakartas in the network' } },
-  { value: '१५,०००', label: { mr: 'पदवीधर मतदारांचा संपर्क व डेटाबेस', en: 'Graduate voters in contact/database' } },
+  { value: '४८,९४४', label: { mr: 'पदवीधर मतदारांचा संपर्क व डेटाबेस', en: 'Graduate voters in contact/database' } },
 ];
 
 export const heroLead: Text = {
