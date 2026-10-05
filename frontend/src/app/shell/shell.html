@@ -29,7 +29,7 @@
         <img class="brand-mark" [src]="profile.portrait" [alt]="lang.t(profile.name)" />
         <div class="brand-text">
           <h1>{{ lang.t(profile.name) }}</h1>
-          <p>{{ lang.lang() === 'mr' ? 'पदवीधर प्रकोष्ठ' : 'Graduate Cell' }}</p>
+          <p>{{ lang.lang() === 'mr' ? 'विद्यार्थी विकास मंच' : 'Vidyarthi Vikas Manch' }}</p>
         </div>
       </a>
       <button class="menu-btn" type="button" (click)="menuOpen.set(!menuOpen())" [attr.aria-label]="lang.lang() === 'mr' ? 'मेनू' : 'Menu'">

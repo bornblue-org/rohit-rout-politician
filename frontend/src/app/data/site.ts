@@ -5,8 +5,8 @@ export const profile = {
   name: { mr: 'श्री. रोहित अनिल राऊत', en: 'Shri Rohit Anil Raut' } satisfies Text,
   shortName: { mr: 'रोहित राऊत', en: 'Rohit Raut' } satisfies Text,
   constituency: {
-    mr: 'पदवीधर प्रकोष्ठ, महाराष्ट्र प्रदेश सरचिटणीस',
-    en: 'Graduate Cell, Maharashtra Pradesh General Secretary',
+    mr: 'विद्यार्थी विकास मंच महाराष्ट्र संयोजक',
+    en: 'Vidyarthi Vikas Manch Maharashtra Sanyojak',
   } satisfies Text,
   slogan: {
     mr: 'विद्यार्थी, युवक व पदवीधरांचे संघटन  |  महाराष्ट्रव्यापी संपर्क  |  संघटनात्मक अनुभव',
@@ -44,8 +44,8 @@ export const stats: Stat[] = [
 ];
 
 export const heroLead: Text = {
-  mr: 'फलटण, जिल्हा सातारा येथून राष्ट्रीय स्वयंसेवक संघाचे बाल स्वयंसेवक ते अखिल भारतीय विद्यार्थी परिषदेचे नऊ वर्षे पूर्णवेळ कार्यकर्ता, आणि आता पदवीधर प्रकोष्ठात महाराष्ट्र प्रदेश सरचिटणीस पदाची जबाबदारी. विद्यार्थी, युवक व पदवीधर क्षेत्रातील संघटन अधिक मजबूत करण्याचा प्रवास.',
-  en: 'From a Rashtriya Swayamsevak Sangh bal swayamsevak in Phaltan, Satara district, to nine years as a full-time Akhil Bharatiya Vidyarthi Parishad karyakarta, and now the responsibility of Maharashtra Pradesh General Secretary in the Graduate Cell. A journey of strengthening organisation among students, youth, and graduates.',
+  mr: 'फलटण, जिल्हा सातारा येथून राष्ट्रीय स्वयंसेवक संघाचे बाल स्वयंसेवक ते अखिल भारतीय विद्यार्थी परिषदेचे नऊ वर्षे पूर्णवेळ कार्यकर्ता, आणि आता विद्यार्थी विकास मंच महाराष्ट्र संयोजक पदाची जबाबदारी. विद्यार्थी, युवक व पदवीधर क्षेत्रातील संघटन अधिक मजबूत करण्याचा प्रवास.',
+  en: 'From a Rashtriya Swayamsevak Sangh bal swayamsevak in Phaltan, Satara district, to nine years as a full-time Akhil Bharatiya Vidyarthi Parishad karyakarta, and now the responsibility of Sanyojak (Convener) of Vidyarthi Vikas Manch Maharashtra. A journey of strengthening organisation among students, youth, and graduates.',
 };
 
 export const aboutLead: Text = {
@@ -227,11 +227,11 @@ export const pageTitles: Record<string, Text> = {
 };
 
 export const voterDistricts: { id: string; name: Text; color: string; icon: string }[] = [
-  { id: 'pune', name: { mr: 'पुणे', en: 'Pune' }, color: '#0e2b1f', icon: '/icons/pune.svg?v=3' },
-  { id: 'kolhapur', name: { mr: 'कोल्हापूर', en: 'Kolhapur' }, color: '#0a6b45', icon: '/icons/kolhapur.svg?v=3' },
-  { id: 'sangli', name: { mr: 'सांगली', en: 'Sangli' }, color: '#c2410c', icon: '/icons/sangli.svg?v=3' },
-  { id: 'satara', name: { mr: 'सातारा', en: 'Satara' }, color: '#b8860b', icon: '/icons/satara.svg?v=3' },
-  { id: 'solapur', name: { mr: 'सोलापूर', en: 'Solapur' }, color: '#f97316', icon: '/icons/solapur.svg?v=3' },
+  { id: 'pune', name: { mr: 'पुणे', en: 'Pune' }, color: '#071a4a', icon: '/icons/pune.svg?v=3' },
+  { id: 'kolhapur', name: { mr: 'कोल्हापूर', en: 'Kolhapur' }, color: '#172f7a', icon: '/icons/kolhapur.svg?v=3' },
+  { id: 'sangli', name: { mr: 'सांगली', en: 'Sangli' }, color: '#1e3a8a', icon: '/icons/sangli.svg?v=3' },
+  { id: 'satara', name: { mr: 'सातारा', en: 'Satara' }, color: '#0369a1', icon: '/icons/satara.svg?v=3' },
+  { id: 'solapur', name: { mr: 'सोलापूर', en: 'Solapur' }, color: '#3730a3', icon: '/icons/solapur.svg?v=3' },
 ];
 
 export interface VoterRecord {
