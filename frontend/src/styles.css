@@ -1012,7 +1012,7 @@ textarea { min-height: 130px; resize: vertical; }
   width: fit-content;
   margin: -18px auto 0;
   background: var(--gold);
-  color: var(--ink);
+  color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
   padding: 7px 16px;
@@ -1768,3 +1768,6 @@ button.news-card { padding: 0; }
 .kicker { color: #1d4ed8; }
 .kicker::before { content: ""; display: inline-block; width: 22px; height: 3px; margin-right: 8px; vertical-align: middle; border-radius: 3px; background: var(--grad-accent); }
 .band { background: linear-gradient(180deg, #e3ecfc 0%, #f3f7ff 100%); }
+
+/* Keep the Vidyarthi Vikas Manch labels white on dark/blue surfaces */
+.pill, .stage .pill, .stage-kicker, .brand-text p { color: #fff; }
