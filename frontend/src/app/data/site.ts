@@ -227,11 +227,11 @@ export const pageTitles: Record<string, Text> = {
 };
 
 export const voterDistricts: { id: string; name: Text; color: string; icon: string }[] = [
-  { id: 'pune', name: { mr: 'पुणे', en: 'Pune' }, color: '#071a4a', icon: '/icons/pune.svg?v=3' },
-  { id: 'kolhapur', name: { mr: 'कोल्हापूर', en: 'Kolhapur' }, color: '#172f7a', icon: '/icons/kolhapur.svg?v=3' },
-  { id: 'sangli', name: { mr: 'सांगली', en: 'Sangli' }, color: '#1e3a8a', icon: '/icons/sangli.svg?v=3' },
-  { id: 'satara', name: { mr: 'सातारा', en: 'Satara' }, color: '#0369a1', icon: '/icons/satara.svg?v=3' },
-  { id: 'solapur', name: { mr: 'सोलापूर', en: 'Solapur' }, color: '#3730a3', icon: '/icons/solapur.svg?v=3' },
+  { id: 'pune', name: { mr: 'पुणे', en: 'Pune' }, color: '#0c2340', icon: '/icons/pune.svg?v=3' },
+  { id: 'kolhapur', name: { mr: 'कोल्हापूर', en: 'Kolhapur' }, color: '#0e7490', icon: '/icons/kolhapur.svg?v=3' },
+  { id: 'sangli', name: { mr: 'सांगली', en: 'Sangli' }, color: '#c56a32', icon: '/icons/sangli.svg?v=3' },
+  { id: 'satara', name: { mr: 'सातारा', en: 'Satara' }, color: '#1d4e89', icon: '/icons/satara.svg?v=3' },
+  { id: 'solapur', name: { mr: 'सोलापूर', en: 'Solapur' }, color: '#0f766e', icon: '/icons/solapur.svg?v=3' },
 ];
 
 export interface VoterRecord {
