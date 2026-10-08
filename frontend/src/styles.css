@@ -72,7 +72,7 @@ h1, h2, h3, p { margin: 0; }
   top: 0;
   z-index: 30;
 }
-.utility { background: #0c2340; color: #e7f2fb; }
+.utility { background: #0e7490; color: #ffffff; }
 .utility-inner {
   width: min(1320px, calc(100% - 28px));
   margin-inline: auto;
@@ -209,6 +209,17 @@ h1, h2, h3, p { margin: 0; }
 .nav-row a.active, .nav-row a:hover { color: white; }
 .nav-row a.active::after, .nav-row a:hover::after { transform: scaleX(1); }
 @keyframes slide { to { transform: translateX(-50%); } }
+
+.hero-banner { background: #cfe6f6; line-height: 0; }
+.hero-banner img { display: block; width: 100%; height: auto; }
+.hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 14px 16px; line-height: normal; }
+.hero-actions .btn { font-size: 1rem; padding: 10px 22px; border-radius: 8px; box-shadow: 0 4px 12px rgba(12, 35, 64, 0.2); transition: transform .15s; }
+.hero-actions .btn:hover { transform: translateY(-2px); }
+.hero-actions .btn-primary { background: var(--ink); }
+.hero-actions .btn-primary:hover { background: #0a1c33; }
+.hero-actions .btn-alt { background: var(--gold); color: var(--ink); }
+.hero-actions .btn-alt:hover { background: #b3914d; }
+@media (max-width: 560px) { .hero-actions .btn { flex: 1 1 100%; } }
 
 .stage {
   position: relative;
